@@ -1,16 +1,25 @@
-var http = require('http');
+var { google } = require('googleapis');
 var fs = require('fs');
-var app = http.createServer(function (request, response) {
-	var url = request.url;
-	if (request.url == '/') {
-		url = '/index.html';
-	}
-	if (request.url == '/favicon.ico') {
-		response.writeHead(404);
-		response.end();
-		return;
-	}
-	response.writeHead(200);
-	response.end(fs.readFileSync(__dirname + url));
-});
-app.listen(3000);
+
+var service = google.youtube('v3');
+service.videos.list(
+	{
+		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8',
+		part: 'snippet,statistics',
+		id: 't-0WD34AytM',
+		fields:
+			'items(snippet(title, description, channelId), statistics(viewCount, likeCount, commentCount))',
+	},
+	function (err, response) {
+		if (err) {
+			console.log('The ApI returned an error:' + err);
+			return;
+		}
+		var video = response.data.items;
+		if (video.length == 0) {
+			console.log('검색 결과 없음.');
+		} else {
+			console.log(JSON.stringify(response.data.items[0], null, 4));
+		}
+	},
+);
