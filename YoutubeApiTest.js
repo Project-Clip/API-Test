@@ -4,15 +4,15 @@ var fs = require('fs');
 var service = google.youtube('v3');
 service.videos.list(
 	{
-		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8',
+		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
 		part: 'snippet,statistics',
-		id: 't-0WD34AytM',
+		id: 't-0WD34AytM', //동영상 id
 		fields:
-			'items(snippet(title, description, channelId), statistics(viewCount, likeCount, commentCount))',
+			'items(snippet(title, description, channelId), statistics(viewCount, likeCount, commentCount))', //id에서 가져올 array,
 	},
 	function (err, response) {
 		if (err) {
-			console.log('The ApI returned an error:' + err);
+			console.log('The API returned an error:' + err);
 			return;
 		}
 		var video = response.data.items;
