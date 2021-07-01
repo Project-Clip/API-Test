@@ -1,7 +1,6 @@
 var { google } = require('googleapis');
-var fs = require('fs');
-
 var service = google.youtube('v3');
+
 service.videos.list(
 	{
 		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
