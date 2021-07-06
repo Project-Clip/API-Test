@@ -4,7 +4,7 @@ var service = google.youtube('v3');
 service.playlistItems.list(
 	//재생목록에 포함 된 영상정도 가져오기
 	{
-		playlistId: 'PLqqQvcAR1H0ksy7T-vGHDlbqGOCpx8OXC' /*'PL_nJXfU08-BASBpz8C2JHgvbFScMpP-m4'*/, //재생목록의 id값
+		playlistId: 'PLqqQvcAR1H0ksy7T-vGHDlbqGOCpx8OXC', //재생목록의 id값
 		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
 		part: 'snippet',
 		fields:
