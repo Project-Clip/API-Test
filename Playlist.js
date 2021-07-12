@@ -23,8 +23,8 @@ service.playlistItems.list(
 			// 가져온거 없을 때
 			console.log('검색 결과 없음.');
 		} else {
-			let countVideo = 0;
-			while (countVideo < 30) {
+			let countPlaylistVideoList = 0;
+			while (countPlaylistVideoList < video.length) {
 				console.log(JSON.stringify(response.data.items[countVideo], null, 4));
 				countVideo++;
 			}
