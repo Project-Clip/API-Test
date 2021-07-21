@@ -7,7 +7,7 @@ service.playlistItems.list(
 		playlistId: 'PLqqQvcAR1H0ksy7T-vGHDlbqGOCpx8OXC' /*'PL_nJXfU08-BASBpz8C2JHgvbFScMpP-m4'*/, //재생목록의 id값
 		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
 		part: 'snippet',
-		fields: 'nextPageToken, pageInfo, items(id, snippet(channelId, resourceId(videoId)))', //api로 요청할 정보(영상의 고유ID, 채널ID, 영상파일의 ID,영상제목, 내용, 썸네일)
+		fields: 'nextPageToken, pageInfo, items(id, snippet(channelId, resourceId(videoId)))', //api로 요청할 정보(영상의 고유ID, 채널ID, 영상 ID)
 		maxResults: 30, //요청할 영상의 최대 갯수
 	},
 	function (err, response) {

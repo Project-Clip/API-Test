@@ -8,7 +8,7 @@ service.playlistItems.list(
 		key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
 		part: 'snippet',
 		fields: 'nextPageToken, pageInfo, items(id, snippet(channelId, resourceId(videoId)))',
-		//api로 요청할 정보(영상의 고유ID, 채널ID, 영상파일의 ID,영상제목, 내용, 썸네일)
+		//api로 요청할 정보(영상의 고유ID, 채널ID, 영상 ID)
 		maxResults: 50,
 	},
 	function (err, response) {
