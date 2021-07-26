@@ -16,7 +16,7 @@ service.playlistItems.list(
 			console.log('The API returned an error:' + err);
 			return null;
 		}
-		let playlistVideo = response.data.items; //요청한 재생목록을 변수로 지정
+		let playlistVideo = response.data.items; //봔환 된 정보를 변수로 지정
 		if (playlistVideo.length == 0) {
 			//재생목록안에 동영상이 없을 때
 			console.log('검색 결과 없음.');

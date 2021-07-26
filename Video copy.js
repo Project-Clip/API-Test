@@ -1,9 +1,7 @@
 var { google } = require('googleapis');
-const { title } = require('process');
 var service = google.youtube('v3');
-var exports = (module.exports = {});
 
-exports.AngryDoyoon = function (callback) {
+function asdf(callback) {
 	service.videos.list(
 		{
 			key: 'AIzaSyADYJgNuh0hvCN_07d4ZF4Snb9KficArr8', //googleAPI에서 부여받은 개인 key
@@ -17,17 +15,25 @@ exports.AngryDoyoon = function (callback) {
 				console.log('The API returned an error:' + err);
 				return;
 			}
-			let video = response.data.items; //반환 된 정보 변수로 지정
+			var video = response.data.items;
 			if (video.length == 0) {
 				console.log('검색 결과 없음.');
 			} else {
-				// console.log('제목 : ' + video[0].snippet.title); //가져온 영상 정보 출력
-				// console.log('설명 : ' + video[0].snippet.description);
-				// console.log('채널 id : ' + video[0].snippet.channelId);
-				// console.log('좋아요 수 : ' + video[0].statistics.likeCount);
+				console.log('제목 : ' + video[0].snippet.title); //가져온 영상 정보 출력
+				console.log('설명 : ' + video[0].snippet.description);
+				console.log('채널 id : ' + video[0].snippet.channelId);
+				console.log('좋아요 수 : ' + video[0].statistics.likeCount);
+				var params = video[0];
 				// console.log(params);
-				return callback(video[0]);
+				// Test(params);
+				// Test2(params);
+				return callback(params);
 			}
 		},
 	);
-};
+}
+
+function Test2(info) {
+	console.log('----------------구분선------------------');
+	console.log(info);
+}
