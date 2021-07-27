@@ -1,5 +1,4 @@
 var { google } = require('googleapis');
-const { title } = require('process');
 var service = google.youtube('v3');
 var exports = (module.exports = {});
 
@@ -21,12 +20,13 @@ exports.AngryDoyoon = function (callback) {
 			if (video.length == 0) {
 				console.log('검색 결과 없음.');
 			} else {
+				let videoItems = video[0];
 				// console.log('제목 : ' + video[0].snippet.title); //가져온 영상 정보 출력
 				// console.log('설명 : ' + video[0].snippet.description);
 				// console.log('채널 id : ' + video[0].snippet.channelId);
 				// console.log('좋아요 수 : ' + video[0].statistics.likeCount);
 				// console.log(params);
-				return callback(video[0]);
+				return callback(videoItems);
 			}
 		},
 	);
