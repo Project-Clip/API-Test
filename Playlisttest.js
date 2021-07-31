@@ -18,28 +18,28 @@ service.playlists.list(
 			console.log('The API returned an error : ' + err);
 			return;
 		}
-		var playlist = response.data.items;
+		let playlist = response.data.items;
 		if (playlist.length == 0) {
 			// 가져온거 없을 때
 			console.log('검색 결과 없음.');
 		} else {
-			let playlistList = 0;
+			let playlistNum = 0;
 			console.log('검색 결과 값 : ' + playlist.length);
 			console.log('nextPageToken : ' + response.data.nextPageToken);
 			console.log('총 검색결과 : ' + JSON.stringify(response.data.pageInfo, null, 4));
-			while (playlistList < playlist.length) {
-				// console.log('재생목록 id : ' + playlist[playlistList].id);
-				// console.log('생성 날짜 : ' + playlist[playlistList].snippet.publishedAt);
-				// console.log('채널 id : ' + playlist[playlistList].snippet.channelId);
-				// console.log('제목 : ' + playlist[playlistList].snippet.title);
-				// console.log('설명 : ' + playlist[playlistList].snippet.description);
-				// console.log('썸네일 : ' + playlist[playlistList].snippet.thumbnails.high.url);
-				// console.log('채널 이름 : ' + playlist[playlistList].snippet.channelTitle);
+			while (playlistNum < playlist.length) {
+				// console.log('재생목록 id : ' + playlist[playlistNum].id);
+				// console.log('생성 날짜 : ' + playlist[playlistNum].snippet.publishedAt);
+				// console.log('채널 id : ' + playlist[playlistNum].snippet.channelId);
+				// console.log('제목 : ' + playlist[playlistNum].snippet.title);
+				// console.log('설명 : ' + playlist[playlistNum].snippet.description);
+				// console.log('썸네일 : ' + playlist[playlistNum].snippet.thumbnails.high.url);
+				// console.log('채널 이름 : ' + playlist[playlistNum].snippet.channelTitle);
 				// console.log(playlist[countPlaylistVideoList].snippet.tags);
-				playlistList++;
+				playlistNum++;
 			}
-			if (playlistList == 50) {
-				MaxCount(playlistList);
+			if (playlistNum == 50) {
+				MaxCount(playlistNum);
 			}
 		}
 	},

@@ -1,8 +1,15 @@
-var test = require('./Video.js');
+var Video = require('./Video.js');
+var PlaylistItem = require('./PlaylistItem.js');
+var Playlist = require('./Playlist.js');
 
 // var object = test.AngryDoyoon();
-// console.log('제목 : ' + object.title);
-test.AngryDoyoon(function (response) {
-	console.log('결과 : ' + response.snippet.title);
+Playlist.Data(function (response) {
+	console.log(response);
 });
-// console.log(test());
+PlaylistItem.Data(function (response) {
+	console.log(response);
+	// console.log(response[0].snippet.resourceId.videoId);
+});
+Video.Data(function (response) {
+	console.log(response);
+});
